@@ -59,16 +59,11 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 .intro-brand i { color: #c7ff45; font-style: normal; }
 .intro-kicker { display: block; margin-bottom: 18px; color: #c7ff45; font-size: 11px; letter-spacing: .42em; }
 .intro-line { display: block; width: 74px; height: 3px; margin: 25px auto 0; background: #c7ff45; transform-origin: center; animation: intro-line .6s 3.2s both; }
-.intro-panel { position: absolute; z-index: 2; top: 0; width: 50%; height: 100%; background: #050606; pointer-events: none; opacity: 0; animation-duration: 1.5s; animation-delay: 5s; animation-fill-mode: forwards; animation-timing-function: cubic-bezier(.76,0,.24,1); }
-.intro-panel-top { left: 0; animation-name: intro-open-left; }
-.intro-panel-bottom { right: 0; animation-name: intro-open-right; }
 .intro-actions { position: absolute; z-index: 5; right: 24px; bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 .intro-sound,.intro-skip { border: 1px solid rgba(255,255,255,.55); padding: 12px 15px; color: white; background: rgba(0,0,0,.48); backdrop-filter: blur(8px); font-size: 10px; font-weight: 800; letter-spacing: .13em; cursor: pointer; }
 .intro-sound { border-color: #c7ff45; color: #c7ff45; }
 @keyframes intro-brand-in { from { opacity: 0; transform: translateY(24px) scale(.96); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
 @keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes intro-open-left { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 1; transform: translateX(-101%); } }
-@keyframes intro-open-right { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 1; transform: translateX(101%); } }
 @keyframes intro-video-dark { to { opacity: 0; } }
 @keyframes intro-brand-out { to { opacity: 0; transform: translateY(-12px); } }
 @keyframes intro-fade { 0%,94% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
