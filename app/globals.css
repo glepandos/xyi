@@ -54,6 +54,7 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 .intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: transparent; animation: intro-fade 7s linear forwards; }
 .intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.95) contrast(1.08); animation: intro-video-dark 1s 4s linear forwards; }
 .intro-shade { position: absolute; inset: 0; background: rgba(0,0,0,0); pointer-events: none; }
+.intro-black-overlay { position: absolute; z-index: 2; inset: 0; background: #050606; opacity: 0; pointer-events: none; animation: intro-overlay-cycle 2.5s 3s forwards; }
 .intro-brand { position: relative; z-index: 3; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.075em; text-shadow: 0 4px 35px #000; opacity: 0; animation: intro-brand-in .65s 3s both, intro-brand-out .5s 5s forwards; }
 .intro-brand div { font-size: clamp(52px,11vw,132px); line-height: .95; }
 .intro-brand i { color: #c7ff45; font-style: normal; }
@@ -62,6 +63,7 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 .intro-actions { position: absolute; z-index: 5; right: 24px; bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 .intro-sound,.intro-skip { border: 1px solid rgba(255,255,255,.55); padding: 12px 15px; color: white; background: rgba(0,0,0,.48); backdrop-filter: blur(8px); font-size: 10px; font-weight: 800; letter-spacing: .13em; cursor: pointer; }
 .intro-sound { border-color: #c7ff45; color: #c7ff45; }
+@keyframes intro-overlay-cycle { 0% { opacity: 0; } 52% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes intro-brand-in { from { opacity: 0; transform: translateY(24px) scale(.96); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
 @keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes intro-video-dark { to { opacity: 0; } }
