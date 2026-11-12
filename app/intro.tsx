@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const VIDEO_SRC = "https://videos.pexels.com/video-files/33596420/33596420-hd_1080_1920_30fps.mp4";
 
 export default function Intro() {
   const [visible, setVisible] = useState(true);
+  const [soundOn, setSoundOn] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const seen = sessionStorage.getItem("fresh-auto-intro-seen");
@@ -16,7 +18,7 @@ export default function Intro() {
     const timer = window.setTimeout(() => {
       setVisible(false);
       sessionStorage.setItem("fresh-auto-intro-seen", "1");
-    }, 8200);
+    }, 10000);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -27,9 +29,23 @@ export default function Intro() {
     setVisible(false);
   };
 
+  const enableSound = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = false;
+    video.volume = 0.8;
+    try {
+      await video.play();
+      setSoundOn(true);
+    } catch {
+      video.muted = true;
+      setSoundOn(false);
+    }
+  };
+
   return (
     <div className="intro-screen" role="dialog" aria-label="Fresh Auto">
-      <video className="intro-video" autoPlay muted playsInline preload="auto" onEnded={dismiss}>
+      <video ref={videoRef} className="intro-video" autoPlay muted playsInline preload="auto" onEnded={dismiss}>
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="intro-shade" />
@@ -40,7 +56,10 @@ export default function Intro() {
       </div>
       <div className="intro-panel intro-panel-top" />
       <div className="intro-panel intro-panel-bottom" />
-      <button className="intro-skip" onClick={dismiss}>ПРОПУСТИТЬ ↗</button>
+      <div className="intro-actions">
+        <button className="intro-sound" onClick={enableSound}>{soundOn ? "ЗВУК ВКЛЮЧЁН" : "ВКЛЮЧИТЬ ЗВУК 🔊"}</button>
+        <button className="intro-skip" onClick={dismiss}>ПРОПУСТИТЬ ↗</button>
+      </div>
     </div>
   );
 }
