@@ -49,6 +49,7 @@ export default function Intro() {
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="intro-shade" />
+      <div className="intro-black-overlay" />
       <div className="intro-brand">
         <span className="intro-kicker">DRIVE THE DIFFERENCE</span>
         <div>FRESH <i>AUTO</i></div>
