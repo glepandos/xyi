@@ -1,4 +1,5 @@
 import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Phone, MessageCircle, Check } from "lucide-react";
+import Intro from "./intro";
 
 const benefits = [
   { number: "01", icon: ShieldCheck, title: "Защита от сколов", text: "Полиуретановая плёнка принимает на себя мелкие удары гравия и дорожного мусора, сохраняя лакокрасочное покрытие." },
@@ -15,6 +16,7 @@ const reasons = [
 export default function Home() {
   return (
     <main>
+      <Intro />
       <header className="absolute z-20 w-full py-6">
         <div className="container flex items-center justify-between">
           <a href="#" className="text-xl font-extrabold tracking-tight">FRESH<span style={{color:"#c7ff45"}}> AUTO</span></a>
