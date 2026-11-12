@@ -1,4 +1,4 @@
-import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Phone, MessageCircle, Check } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Phone, MessageCircle, Check, ScanEye, Award, MessagesSquare } from "lucide-react";
 import Intro from "./intro";
 
 const benefits = [
@@ -8,9 +8,9 @@ const benefits = [
 ];
 
 const reasons = [
-  { number: "01", title: "Внимание к деталям", text: "Аккуратная подготовка кузова и точная работа с каждым элементом автомобиля." },
-  { number: "02", title: "Профессиональный подход", text: "Подбираем решение под автомобиль, задачи владельца и зоны, которым нужна защита." },
-  { number: "03", title: "Честная консультация", text: "Объясняем варианты оклейки, особенности материалов и правила ухода до начала работ." },
+  { number: "01", title: "Внимание к деталям", text: "Аккуратная подготовка кузова и точная работа с каждым элементом автомобиля.", icon: ScanEye },
+  { number: "02", title: "Профессиональный подход", text: "Подбираем решение под автомобиль, задачи владельца и зоны, которым нужна защита.", icon: Award },
+  { number: "03", title: "Честная консультация", text: "Объясняем варианты оклейки, особенности материалов и правила ухода до начала работ.", icon: MessagesSquare },
 ];
 
 export default function Home() {
@@ -65,7 +65,7 @@ export default function Home() {
             <p className="muted">Мы сосредоточены на качестве работы, аккуратности и понятном сервисе — от первой консультации до выдачи автомобиля.</p>
           </div>
           <div className="grid3">
-            {reasons.map((item) => <article className="panel" key={item.number}><div className="panel-number">{item.number} / 03</div><h3>{item.title}</h3><p>{item.text}</p></article>)}
+            {reasons.map((item) => { const Icon = item.icon; return <article className="panel" key={item.number}><div className="flex items-center justify-between"><span className="panel-number">{item.number} / 03</span><span className="reason-icon"><Icon size={23} strokeWidth={1.8}/></span></div><h3>{item.title}</h3><p>{item.text}</p></article>; })}
           </div>
         </div>
       </section>
