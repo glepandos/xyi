@@ -6,11 +6,11 @@
 :root { color-scheme: dark; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #080a0b; color: #f5f5f2; font-family: 'Manrope', Arial, sans-serif; }
+body { font-size: 18px; margin: 0; background: #080a0b; color: #f5f5f2; font-family: 'Manrope', Arial, sans-serif; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: #c7ff45; color: #080a0b; }
 .container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
-.eyebrow { color: #c7ff45; font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+.eyebrow { color: #c7ff45; font-size: 13px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 22px; border-radius: 4px; background: #c7ff45; color: #090b08; font-size: 13px; font-weight: 800; transition: transform .2s, background .2s; }
 .button:hover { transform: translateY(-2px); background: #d8ff80; }
 .button-outline { border: 1px solid #555b51; background: transparent; color: #f5f5f2; }
@@ -18,17 +18,17 @@ a { color: inherit; text-decoration: none; }
 .hero { min-height: 710px; position: relative; display: flex; align-items: center; overflow: hidden; background: linear-gradient(90deg, rgba(5,7,8,.96) 0%, rgba(5,7,8,.78) 45%, rgba(5,7,8,.18) 100%), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=90') center/cover; }
 .hero:after { content: ''; position: absolute; inset: auto 0 0; height: 180px; background: linear-gradient(transparent,#080a0b); }
 .hero-content { position: relative; z-index: 1; padding: 100px 0 130px; max-width: 700px; }
-.hero h1 { margin: 22px 0; font-size: clamp(44px, 7vw, 86px); line-height: .98; letter-spacing: -.065em; font-weight: 800; }
+.hero h1 { margin: 22px 0; font-size: clamp(46px, calc(7vw + 2px), 88px); line-height: .98; letter-spacing: -.065em; font-weight: 800; }
 .hero h1 span { color: #c7ff45; }
-.hero p { max-width: 500px; color: #c1c5bd; font-size: 16px; line-height: 1.8; }
+.hero p { max-width: 500px; color: #c1c5bd; font-size: 18px; line-height: 1.8; }
 .section { padding: 105px 0; }
 .section-head { max-width: 680px; margin-bottom: 48px; }
-.section h2 { margin: 14px 0; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; letter-spacing: -.055em; }
+.section h2 { margin: 14px 0; font-size: clamp(36px, calc(5vw + 2px), 58px); line-height: 1.05; letter-spacing: -.055em; }
 .muted { color: #a3a99e; line-height: 1.8; }
 .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
 .panel { padding: 30px; min-height: 240px; border: 1px solid #282d27; background: linear-gradient(145deg,#151916,#0d100e); }
-.panel-number { color: #c7ff45; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
-.panel h3 { margin: 42px 0 12px; font-size: 21px; }
+.panel-number { color: #c7ff45; font-size: 16px; font-weight: 800; letter-spacing: .14em; }
+.panel h3 { margin: 42px 0 12px; font-size: 23px; }
 .panel p { margin: 0; color: #a3a99e; font-size: 14px; line-height: 1.75; }
 .band { background: #c7ff45; color: #090b08; }
 .band .eyebrow { color: #35451a; }
@@ -41,7 +41,10 @@ a { color: inherit; text-decoration: none; }
 .contact-row { padding: 18px 0; border-bottom: 1px solid #282d27; }
 .contact-row:last-child { border: 0; }
 .contact-label { display: block; color: #92998e; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 7px; }
-.contact-value { font-size: 17px; font-weight: 700; }
+.contact-value { font-size: 19px; font-weight: 700; }
 .map { width: 100%; min-height: 360px; border: 0; filter: grayscale(1) invert(.9) contrast(.85); }
-footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-size: 12px; }
+footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-size: 14px; }
+.text-xs { font-size: calc(.75rem + 2px) !important; }
+.text-xl { font-size: calc(1.25rem + 2px) !important; }
+
 @media (max-width: 760px) { .container { width: min(100% - 32px, 1160px); } .hero { min-height: 660px; background-position: 58% center; } .hero-content { padding: 90px 0 120px; } .grid3, .contact-wrap { grid-template-columns: 1fr; } .section { padding: 75px 0; } .panel { min-height: 205px; } .panel h3 { margin-top: 28px; } }
