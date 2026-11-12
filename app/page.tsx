@@ -65,7 +65,7 @@ export default function Home() {
             <p className="muted">Мы сосредоточены на качестве работы, аккуратности и понятном сервисе — от первой консультации до выдачи автомобиля.</p>
           </div>
           <div className="grid3">
-            {reasons.map((item) => { const Icon = item.icon; return <article className="panel" key={item.number}><div className="flex items-center justify-between"><span className="panel-number">{item.number} / 03</span><span className="reason-icon"><Icon size={23} strokeWidth={1.8}/></span></div><h3>{item.title}</h3><p>{item.text}</p></article>; })}
+            {reasons.map((item) => { const Icon = item.icon; return <article className="panel" key={item.number}><div className="flex items-center justify-between"><span className="panel-number">{item.number}</span><span className="reason-icon"><Icon size={23} strokeWidth={1.8}/></span></div><h3>{item.title}</h3><p>{item.text}</p></article>; })}
           </div>
         </div>
       </section>
