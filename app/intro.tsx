@@ -45,7 +45,7 @@ export default function Intro() {
 
   return (
     <div className="intro-screen" role="dialog" aria-label="Fresh Auto">
-      <video ref={videoRef} className="intro-video" autoPlay muted playsInline preload="auto" onError={dismiss} poster="https://images.pexels.com/videos/33596420/free-video-33596420.jpg?auto=compress&cs=tinysrgb&w=1600">
+      <video ref={videoRef} className="intro-video" autoPlay muted playsInline preload="auto" onError={dismiss}>
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="intro-shade" />
