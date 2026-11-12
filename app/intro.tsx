@@ -18,7 +18,7 @@ export default function Intro() {
     const timer = window.setTimeout(() => {
       setVisible(false);
       sessionStorage.setItem("fresh-auto-intro-seen", "1");
-    }, 10000);
+    }, 12000);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -45,7 +45,7 @@ export default function Intro() {
 
   return (
     <div className="intro-screen" role="dialog" aria-label="Fresh Auto">
-      <video ref={videoRef} className="intro-video" autoPlay muted playsInline preload="auto" onEnded={dismiss}>
+      <video ref={videoRef} className="intro-video" autoPlay muted playsInline preload="auto">
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="intro-shade" />
