@@ -51,7 +51,7 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 
 
 /* Cinematic Fresh Auto opening: car 0-4s, title from 3s, reveal 5-6s */
-.intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: #050606; animation: intro-fade 6s linear forwards; }
+.intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: #050606; animation: intro-fade 7s linear forwards; }
 .intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.95) contrast(1.08); animation: intro-video-dark 1s 4s linear forwards; }
 .intro-shade { position: absolute; inset: 0; background: rgba(0,0,0,0); animation: intro-shade-dark 1s 4s linear forwards; }
 .intro-brand { position: relative; z-index: 3; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.075em; text-shadow: 0 4px 35px #000; opacity: 0; animation: intro-brand-in .65s 3s both; }
@@ -59,7 +59,7 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 .intro-brand i { color: #c7ff45; font-style: normal; }
 .intro-kicker { display: block; margin-bottom: 18px; color: #c7ff45; font-size: 11px; letter-spacing: .42em; }
 .intro-line { display: block; width: 74px; height: 3px; margin: 25px auto 0; background: #c7ff45; transform-origin: center; animation: intro-line .6s 3.2s both; }
-.intro-panel { position: absolute; z-index: 2; top: 0; width: 50%; height: 100%; background: #050606; pointer-events: none; opacity: 0; animation-duration: 1s; animation-delay: 5s; animation-fill-mode: forwards; animation-timing-function: cubic-bezier(.76,0,.24,1); }
+.intro-panel { position: absolute; z-index: 2; top: 0; width: 50%; height: 100%; background: #050606; pointer-events: none; opacity: 0; animation-duration: 1.5s; animation-delay: 5s; animation-fill-mode: forwards; animation-timing-function: cubic-bezier(.76,0,.24,1); }
 .intro-panel-top { left: 0; animation-name: intro-open-left; }
 .intro-panel-bottom { right: 0; animation-name: intro-open-right; }
 .intro-actions { position: absolute; z-index: 5; right: 24px; bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
@@ -67,10 +67,10 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 .intro-sound { border-color: #c7ff45; color: #c7ff45; }
 @keyframes intro-brand-in { from { opacity: 0; transform: translateY(24px) scale(.96); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
 @keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes intro-open-left { 0% { opacity: 0; transform: translateX(0); } 1% { opacity: 1; } 100% { opacity: 1; transform: translateX(-101%); } }
-@keyframes intro-open-right { 0% { opacity: 0; transform: translateX(0); } 1% { opacity: 1; } 100% { opacity: 1; transform: translateX(101%); } }
+@keyframes intro-open-left { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 1; transform: translateX(-101%); } }
+@keyframes intro-open-right { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 1; transform: translateX(101%); } }
 @keyframes intro-video-dark { to { opacity: 0; } }
 @keyframes intro-shade-dark { to { background: #050606; } }
-@keyframes intro-fade { 0%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
+@keyframes intro-fade { 0%,94% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
 @media (max-width: 600px) { .intro-video { object-position: center; } .intro-actions { right: 14px; bottom: 14px; left: 14px; justify-content: center; } .intro-sound,.intro-skip { padding: 11px 12px; } }
 @media (prefers-reduced-motion: reduce) { .intro-screen { animation-duration: 6s; } }
