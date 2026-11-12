@@ -51,10 +51,10 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 
 
 /* Cinematic Fresh Auto opening: car 0-4s, title from 3s, reveal 5-6s */
-.intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: #050606; animation: intro-fade 7s linear forwards; }
+.intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: transparent; animation: intro-fade 7s linear forwards; }
 .intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.95) contrast(1.08); animation: intro-video-dark 1s 4s linear forwards; }
-.intro-shade { position: absolute; inset: 0; background: rgba(0,0,0,0); animation: intro-shade-dark 1s 4s linear forwards; }
-.intro-brand { position: relative; z-index: 3; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.075em; text-shadow: 0 4px 35px #000; opacity: 0; animation: intro-brand-in .65s 3s both; }
+.intro-shade { position: absolute; inset: 0; background: rgba(0,0,0,0); pointer-events: none; }
+.intro-brand { position: relative; z-index: 3; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.075em; text-shadow: 0 4px 35px #000; opacity: 0; animation: intro-brand-in .65s 3s both, intro-brand-out .45s 4.55s forwards; }
 .intro-brand div { font-size: clamp(52px,11vw,132px); line-height: .95; }
 .intro-brand i { color: #c7ff45; font-style: normal; }
 .intro-kicker { display: block; margin-bottom: 18px; color: #c7ff45; font-size: 11px; letter-spacing: .42em; }
@@ -70,7 +70,7 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 @keyframes intro-open-left { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 1; transform: translateX(-101%); } }
 @keyframes intro-open-right { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 1; transform: translateX(101%); } }
 @keyframes intro-video-dark { to { opacity: 0; } }
-@keyframes intro-shade-dark { to { background: #050606; } }
+@keyframes intro-brand-out { to { opacity: 0; transform: translateY(-12px); } }
 @keyframes intro-fade { 0%,94% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
 @media (max-width: 600px) { .intro-video { object-position: center; } .intro-actions { right: 14px; bottom: 14px; left: 14px; justify-content: center; } .intro-sound,.intro-skip { padding: 11px 12px; } }
 @media (prefers-reduced-motion: reduce) { .intro-screen { animation-duration: 6s; } }
