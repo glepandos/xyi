@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const VIDEO_SRC = "https://videos.pexels.com/video-files/33596420/33596420-hd_1080_1920_30fps.mp4";
+const VIDEO_SRC = "/videos/14052141-hd_1920_1080_25fps.mp4";
 
 export default function Intro() {
   const [visible, setVisible] = useState(true);
