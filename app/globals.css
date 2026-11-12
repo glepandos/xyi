@@ -50,26 +50,27 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 @media (max-width: 760px) { .container { width: min(100% - 32px, 1160px); } .hero { min-height: 660px; background-position: 58% center; } .hero-content { padding: 90px 0 120px; } .grid3, .contact-wrap { grid-template-columns: 1fr; } .section { padding: 75px 0; } .panel { min-height: 205px; } .panel h3 { margin-top: 28px; } }
 
 
-/* Cinematic Fresh Auto opening */
-.intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: #050606; animation: intro-fade 12s linear forwards; }
-.intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; filter: saturate(.88) contrast(1.08); }
-.intro-shade { position: absolute; inset: 0; background: linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.08) 48%,rgba(0,0,0,.5)); }
-.intro-brand { position: relative; z-index: 3; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.075em; text-shadow: 0 4px 35px #000; opacity: 0; animation: intro-brand-in .9s 8.2s both, intro-brand-out .55s 10.9s both; }
+/* Cinematic Fresh Auto opening: car 0-4s, title from 3s, reveal 5-6s */
+.intro-screen { position: fixed; inset: 0; z-index: 1000; overflow: hidden; display: grid; place-items: center; background: #050606; animation: intro-fade 6s linear forwards; }
+.intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.95) contrast(1.08); animation: intro-video-dark 1s 4s linear forwards; }
+.intro-shade { position: absolute; inset: 0; background: rgba(0,0,0,0); animation: intro-shade-dark 1s 4s linear forwards; }
+.intro-brand { position: relative; z-index: 3; text-align: center; color: #fff; font-weight: 800; letter-spacing: -.075em; text-shadow: 0 4px 35px #000; opacity: 0; animation: intro-brand-in .65s 3s both; }
 .intro-brand div { font-size: clamp(52px,11vw,132px); line-height: .95; }
 .intro-brand i { color: #c7ff45; font-style: normal; }
 .intro-kicker { display: block; margin-bottom: 18px; color: #c7ff45; font-size: 11px; letter-spacing: .42em; }
-.intro-line { display: block; width: 74px; height: 3px; margin: 25px auto 0; background: #c7ff45; transform-origin: center; animation: intro-line 1s 8.8s both; }
-.intro-panel { position: absolute; z-index: 2; left: 0; width: 100%; height: 50.5%; background: rgba(5,6,6,.12); pointer-events: none; }
-.intro-panel-top { top: 0; animation: intro-open 1.1s 10.9s cubic-bezier(.76,0,.24,1) forwards; }
-.intro-panel-bottom { bottom: 0; animation: intro-open-bottom 1.1s 10.9s cubic-bezier(.76,0,.24,1) forwards; }
+.intro-line { display: block; width: 74px; height: 3px; margin: 25px auto 0; background: #c7ff45; transform-origin: center; animation: intro-line .6s 3.2s both; }
+.intro-panel { position: absolute; z-index: 2; left: 0; width: 100%; height: 50.5%; background: #050606; pointer-events: none; }
+.intro-panel-top { top: 0; animation: intro-open 1s 5s cubic-bezier(.76,0,.24,1) forwards; }
+.intro-panel-bottom { bottom: 0; animation: intro-open-bottom 1s 5s cubic-bezier(.76,0,.24,1) forwards; }
 .intro-actions { position: absolute; z-index: 5; right: 24px; bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 .intro-sound,.intro-skip { border: 1px solid rgba(255,255,255,.55); padding: 12px 15px; color: white; background: rgba(0,0,0,.48); backdrop-filter: blur(8px); font-size: 10px; font-weight: 800; letter-spacing: .13em; cursor: pointer; }
 .intro-sound { border-color: #c7ff45; color: #c7ff45; }
 @keyframes intro-brand-in { from { opacity: 0; transform: translateY(24px) scale(.96); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
-@keyframes intro-brand-out { to { opacity: 0; transform: scale(1.08); filter: blur(12px); } }
 @keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes intro-open { to { transform: translateY(-101%); } }
 @keyframes intro-open-bottom { to { transform: translateY(101%); } }
-@keyframes intro-fade { 0%,91% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
-@media (max-width: 600px) { .intro-video { object-position: 52% center; } .intro-actions { right: 14px; bottom: 14px; left: 14px; justify-content: center; } .intro-sound,.intro-skip { padding: 11px 12px; } }
-@media (prefers-reduced-motion: reduce) { .intro-screen { animation-duration: 12s; } }
+@keyframes intro-video-dark { to { opacity: 0; } }
+@keyframes intro-shade-dark { to { background: #050606; } }
+@keyframes intro-fade { 0%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
+@media (max-width: 600px) { .intro-video { object-position: center; } .intro-actions { right: 14px; bottom: 14px; left: 14px; justify-content: center; } .intro-sound,.intro-skip { padding: 11px 12px; } }
+@media (prefers-reduced-motion: reduce) { .intro-screen { animation-duration: 6s; } }
