@@ -71,3 +71,6 @@ footer { padding: 28px 0; border-top: 1px solid #242923; color: #858c80; font-si
 @keyframes intro-fade { 0%,94% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
 @media (max-width: 600px) { .intro-video { object-position: center; } .intro-actions { right: 14px; bottom: 14px; left: 14px; justify-content: center; } .intro-sound,.intro-skip { padding: 11px 12px; } }
 @media (prefers-reduced-motion: reduce) { .intro-screen { animation-duration: 6s; } }
+
+/* Aligned icons for the three Fresh Auto value cards */
+.band .reason-icon { width: 48px; height: 48px; flex: 0 0 48px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid rgba(9,11,8,.72); border-radius: 50%; color: #090b08; }
