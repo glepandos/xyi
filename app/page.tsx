@@ -52,7 +52,7 @@ export default function Home() {
             <p className="muted">Защитная плёнка помогает сохранить заводское покрытие и внешний вид автомобиля в городских поездках и на трассе.</p>
           </div>
           <div className="grid3">
-            {benefits.map((item) => { const Icon = item.icon; return <article className="panel" key={item.number}><div className="flex items-center justify-between"><span className="panel-number">{item.number} / 03</span><Icon color="#c7ff45" size={22}/></div><h3>{item.title}</h3><p>{item.text}</p></article>; })}
+            {benefits.map((item) => { const Icon = item.icon; return <article className="panel" key={item.number}><div className="flex items-center justify-between"><span className="panel-number">{item.number}</span><Icon color="#c7ff45" size={22}/></div><h3>{item.title}</h3><p>{item.text}</p></article>; })}
           </div>
         </div>
       </section>
