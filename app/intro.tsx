@@ -54,8 +54,6 @@ export default function Intro() {
         <div>FRESH <i>AUTO</i></div>
         <span className="intro-line" />
       </div>
-      <div className="intro-panel intro-panel-top" />
-      <div className="intro-panel intro-panel-bottom" />
       <div className="intro-actions">
         <button className="intro-sound" onClick={enableSound}>{soundOn ? "ЗВУК ВКЛЮЧЁН" : "ВКЛЮЧИТЬ ЗВУК 🔊"}</button>
         <button className="intro-skip" onClick={dismiss}>ПРОПУСТИТЬ ↗</button>
