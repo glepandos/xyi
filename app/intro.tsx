@@ -18,7 +18,7 @@ export default function Intro() {
     const timer = window.setTimeout(() => {
       setVisible(false);
       sessionStorage.setItem("fresh-auto-intro-seen", "1");
-    }, 12000);
+    }, 6000);
     return () => window.clearTimeout(timer);
   }, []);
 
