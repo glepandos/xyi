@@ -1,4 +1,5 @@
-import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Phone, MessageCircle, Check, ScanEye, Award, MessagesSquare } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Phone, MessageCircle, Check, ScanEye, Award, MessagesSquare, Instagram, Send } from "lucide-react";
+import RequestModal from "./RequestModal";
 import Intro from "./intro";
 
 const benefits = [
@@ -25,7 +26,7 @@ export default function Home() {
             <a href="#about" className="hover:text-lime-300">Почему мы</a>
             <a href="#contacts" className="hover:text-lime-300">Контакты</a>
           </nav>
-          <a className="button !px-4 !py-3" href="tel:+79179999999">Позвонить <ArrowUpRight size={15}/></a>
+          <div className="flex items-center gap-3"><div className="social-links"><a href="https://t.me/stegleb?ysclid=mwent09yyj102349737" target="_blank" rel="noreferrer" aria-label="Telegram"><Send size={19}/></a><a href="https://www.instagram.com/stegleb" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={19}/></a></div><RequestModal className="!px-4 !py-3" /></div>
         </div>
       </header>
 
@@ -77,8 +78,8 @@ export default function Home() {
               <div className="eyebrow">Будем на связи</div>
               <h2>Готовы защитить<br/>ваш автомобиль?</h2>
               <p className="muted mb-8">Расскажите, какой автомобиль хотите оклеить, — поможем подобрать подходящий вариант защиты.</p>
-              <a className="button" href="tel:+79179999999"><Phone size={17}/> Позвонить нам</a>
-              <a className="button button-outline ml-2" href="https://wa.me/79179999999" target="_blank" rel="noreferrer"><MessageCircle size={17}/> WhatsApp</a>
+              <RequestModal />
+              <div className="social-links contact-socials"><a href="https://t.me/stegleb?ysclid=mwent09yyj102349737" target="_blank" rel="noreferrer" aria-label="Telegram"><Send size={20}/></a><a href="https://www.instagram.com/stegleb" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={20}/></a></div>
             </div>
             <div className="contact-card">
               <div className="contact-row"><span className="contact-label">Адрес</span><div className="contact-value flex items-center gap-2"><MapPin size={17} color="#c7ff45"/> Айская, 79, Уфа</div></div>
@@ -93,7 +94,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer><div className="container flex flex-wrap items-center justify-between gap-3"><span className="font-extrabold text-white">FRESH AUTO</span><span>© {new Date().getFullYear()} Fresh Auto. Уфа.</span><a href="tel:+79179999999">+7 (917) 999-99-99</a></div></footer>
+      <footer><div className="container flex flex-wrap items-center justify-between gap-3"><span className="font-extrabold text-white">FRESH AUTO</span><span>© {new Date().getFullYear()} Fresh Auto. Уфа.</span><a href="tel:+79179999999">+7 (917) 999-99-99</a><div className="social-links"><a href="https://t.me/stegleb?ysclid=mwent09yyj102349737" target="_blank" rel="noreferrer" aria-label="Telegram"><Send size={18}/></a><a href="https://www.instagram.com/stegleb" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={18}/></a></div></div></footer>
     </main>
   );
 }
