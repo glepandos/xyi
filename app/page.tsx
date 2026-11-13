@@ -1,4 +1,4 @@
-import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Phone, MessageCircle, Check, ScanEye, Award, MessagesSquare, Instagram, Send } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Sparkles, BadgeCheck, MapPin, Check, ScanEye, Award, MessagesSquare, Instagram, Send } from "lucide-react";
 import RequestModal from "./RequestModal";
 import Intro from "./intro";
 
