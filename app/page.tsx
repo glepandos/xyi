@@ -37,7 +37,7 @@ export default function Home() {
             <h1>Сохраним вид.<br/><span>Защитим стиль.</span></h1>
             <p>Оклейка автомобиля полиуретановой плёнкой в Fresh Auto. Защита кузова, которая помогает сохранить красоту вашего автомобиля каждый день.</p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#contacts" className="button">Записаться на консультацию <ArrowUpRight size={17}/></a>
+              <RequestModal />
               <a href="#benefits" className="button button-outline">Узнать больше</a>
             </div>
             <div className="mt-14 flex items-center gap-3 text-xs text-white/60"><span className="h-px w-10 bg-lime-300"></span> Защита, которую видно в деталях</div>
