@@ -30,11 +30,19 @@ export async function POST(request: Request) {
     });
 
     if (!telegramResponse.ok) {
-      return NextResponse.json({ error: "Не удалось передать заявку" }, { status: 502 });
+      const details = await telegramResponse.text();
+      console.error("Telegram sendMessage failed", {
+        status: telegramResponse.status,
+        response: details.slice(0, 1000),
+        chatIdConfigured: Boolean(chatId),
+        tokenConfigured: Boolean(token),
+      });
+      return NextResponse.json({ error: "Telegram отклонил отправку заявки", code: "TELEGRAM_SEND_FAILED" }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ error: "Некорректный запрос" }, { status: 400 });
+  } catch (error) {
+    console.error("Lead API failed", error);
+    return NextResponse.json({ error: "Внутренняя ошибка при отправке заявки" }, { status: 500 });
   }
 }
