@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       "🚘 Новая заявка с сайта Fresh Auto",
       `Имя: ${name}`,
       `Телефон: ${phone}`,
-    ].join("\\n");
+    ].join("\n");
 
     const telegramResponse = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
